@@ -10,16 +10,19 @@ init() {
 	if (WinExist(GameTitle)) {
 		hotkeyState := hotkeyState = "ON" ? "OFF" : "ON"
 		if (playerState = 0) {
-			Menu, Tray, Tip, GTAO Macro: %hotkeyState%`nCEO/MC Mode: Disabled
+			Menu, Tray, Tip,GTAO Macro: %hotkeyState%`nVIP Mode: Disabled
 		} else { 
-			Menu, Tray, Tip, GTAO Macro: %hotkeyState%`nCEO/MC Mode: Enabled
+			Menu, Tray, Tip,GTAO Macro: %hotkeyState%`nVIP Mode: Enabled
 		}
 		setHotkeyState(hotkeyState)
 		
-		if (hotkeyState = "ON")
+		if (hotkeyState = "ON") {
 			Menu, Tray, Rename, Activate, Deactivate
-		else
+			SoundBeep, 800	
+		} else{
 			Menu, Tray, Rename, Deactivate, Activate
+			SoundBeep, 450
+		}
 	} else {
 		msgbox, 16, Error, GTA V is not running!
 	}
@@ -63,11 +66,13 @@ toggleCeo() {
 	if (playerState = 0) {
 		playerState := 1
 		ceo_status = Enabled
-		Menu, Tray, Tip, GTAO Macro: %hotkeyState%`nCEO/MC Mode: %ceo_status%
+		Menu, Tray, Tip,GTAO Macro: %hotkeyState%`nVIP Mode: %ceo_status%
+		SoundPlay, %A_ScriptDir%\assets\vip-enabled.mp3, Wait
 	} else {
 		playerState := 0
 		ceo_status = Disabled
-		Menu, Tray, Tip, GTAO Macro: %hotkeyState%`nCEO/MC Mode: %ceo_status%
+		Menu, Tray, Tip,GTAO Macro: %hotkeyState%`nVIP Mode: %ceo_status%
+		SoundPlay, %A_ScriptDir%\assets\vip-disabled.mp3, Wait
 	}
 }
 
@@ -138,8 +143,9 @@ outfitFix() {
 
 toggleAFK() {
 	if (afk = false) {
-		MsgBox, 64, GTA Online Macro  v1.0, Anti-AFK Enabled!`nYou can disable it by pressing [W+A] on the keyboard., 2
+		MsgBox, 64, %Title% %version%, Anti-AFK Enabled!`nYou can disable it by pressing [W] on the keyboard., 5
 		Menu, Tray, Rename, Anti-AFK: [OFF], Anti-AFK: [ON]
+		WinActivate, %GameTitle%
 	} else {
 		Menu, Tray, Rename, Anti-AFK: [ON], Anti-AFK: [OFF]
 	}
@@ -151,5 +157,5 @@ toggleAFK() {
 
 emptySession() {
 	suspendProcess()
-	MsgBox, 64, GTA Online Macro  v1.0, Session cleared!, 1
+	MsgBox, 64, %Title% %version%, Session cleared!, 1
 }
