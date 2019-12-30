@@ -2,20 +2,15 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
+; Modified by kezoura (https://github.com/kezoura)
+;
 
-Global PegasusKey := "Numpad0 & Numpad1"
-Global MechanicKey := "Numpad0 & Numpad2"
-Global LesterKey := "Numpad0 & Numpad3"
-Global BuzzardKey := "Numpad0 & Numpad4"
-Global GhostKey := "Numpad0 & Numpad5"
-Global MorsMutualKey := "Numpad0 & Numpad6"
-Global ArmorKey := "Numpad0 & Numpad7"
-Global SnackKey := "NumpadDot"
-Global BullsharkKey := "NumpadAdd"
-Global AmmoKey := "NumpadSub"
-Global ToggleCeoKey := "NumpadDiv"
-Global FastHeavyReloadKey := "LAlt"
-Global FastEwoKey := "NumpadEnter"
-Global RepeatButtonKey := "Numpad0 & Numpad8"
-Global CrosshairKey := "Numpad0 & Numpad9"
-Global OutfitFixKey := "RCtrl & RShift"
+Global Eat_EgoChaser_Key := "Numpad1"
+Global Eat_Meteorite_Key := "Numpad2"
+Global Eat_eCola_Key := "Numpad3"
+Global Eat_PsQs_Key := "NumpadDot"
+Global Armor_Key := "Numpad0"
+Global Buy_Ammo_Key := "NumpadMult"
+Global Toggle_Ceo_Key := "NumpadDiv"
+Global Outfit_Fix_Key := "RCtrl & RShift"
+Global Armor_Type := "armor5"
