@@ -13,14 +13,23 @@ Big thanks to MacMailler for creating QuickMacro
 
 ### Hotkeys
 **`End`** : Activate/Deactivate GTA Online Macros
+
 **`Numpad . (Dot)`** : Eat Snack (P's & Q's)
+
 **`Numpad 1`** : Eat Snack (EgoChaser)
+
 **`Numpad 2`** : Eat Snack (Meteorite)
+
 **`Numpad 3`** : Eat Snack (eCola)
+
 **`Numpad 0`** : Use Armor (default: Super Heavy Armor *`armor5`*)
+
 **`Numpad * (Mult)`** : Buy Ammo
+
 **`Numpad / (Div)`** : Toggle CEO/MC Mode (Not for register CEO/MC Club)
+
 **`RCTRL`** + **`RSHIFT`** : Outfit Fix (Re-apply outfit)
+
 
 Empty public session (via tray menu) : ***The game will be frozen for 10 seconds!***
 Crosshair (via tray menu) : ***Windowed / Windowed Borderless only, fullscreen will not work!***
