@@ -1,28 +1,42 @@
+
 # QuickMacro
 GTA Online useful macros
+Big thanks to MacMailler for creating QuickMacro
 
 ### Installation and using
-1. [Download](https://github.com/MacMailler/QuickMacro/releases) latest version
-2. Unpack to any place
-3. Run GTA Online
-4. Run QuickMacro.exe (after opening GTAV window)
-5. Press the "End" key
+1. [Download](https://www.autohotkey.com/) latest version of AutoHotkey & install
+2. [Download](https://github.com/kezoura/GTAO-Macro/releases) latest version of this macro
+3. Extract the archive to any place you want
+4. Run GTA V and go to Online mode
+5. Run QuickMacro.ahk (after opening GTAV window)
+6. Press the "END" key to activate
 
 ### Hotkeys
-+ End - Enable/Disable
-+ Num0 + Num1 - Call Pegasus
-+ Num0 + Num2 - Call Mechanic
-+ Num0 + Num3 - Call Lester
-+ Num0 + Num4 - Spawn Buzzard
-+ Num0 + Num5 - Activate ghost team
-+ Num0 + Num6 - Call Mors Mutual Insurance
-+ Num0 + Num7 - Get heavy armor
-+ Num0 + Num8 - Repeat button
-+ Num0 + Num9 - Show/Hide crosshair
-+ NumAdd - Spawn BST(Bull Shark Testosterone)
-+ NumDiv - Toggle CEO Mode
-+ NumSub - Buy ammo
-+ LAlt - Fast heavy weapon reload
-+ NumEnter - Fast EWO
-+ NumDot - Get snack
-+ RCtrl & RShift - Outfit fix
+**`End`** : Activate/Deactivate GTA Online Macros
+**`Numpad . (Dot)`** : Eat Snack (P's & Q's)
+**`Numpad 1`** : Eat Snack (EgoChaser)
+**`Numpad 2`** : Eat Snack (Meteorite)
+**`Numpad 3`** : Eat Snack (eCola)
+**`Numpad 0`** : Use Armor (default: Super Heavy Armor *`armor5`*)
+**`Numpad * (Mult)`** : Buy Ammo
+**`Numpad / (Div)`** : Toggle CEO/MC Mode (Not for register CEO/MC Club)
+**`RCTRL`** + **`RSHIFT`** : Outfit Fix (Re-apply outfit)
+
+Empty public session (via tray menu) : ***The game will be frozen for 10 seconds!***
+Crosshair (via tray menu) : ***Windowed / Windowed Borderless only, fullscreen will not work!***
+Anti-AFK (via tray menu) : ***The game will press `Z` when reached 10 minutes***
+
+You can change the keybindings by using reference in the link below
+> https://www.autohotkey.com/docs/KeyList.htm
+
+### Config.ini
+    [Misc]
+    Armor_Type = armor5
+Depends on what armor you want to use, you can change it by looking at the table below
+|Name|Armor_Type|
+|--|--|
+|Super Light Armor|armor1|
+|Light Armor|armor2|
+|Standard Armor|armor3|
+|Heavy Armor|armor4|
+|Super Heavy Armor|armor5|
