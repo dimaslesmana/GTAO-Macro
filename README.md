@@ -1,6 +1,7 @@
 
 # GTAO Macro
-GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro
+GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro.
+The macro should be fine on fullscreen mode, except for crosshair. It has to be Windowed / Windowed fullscreen.
 
 ### Installation and using
 1. [Download](https://www.autohotkey.com/) latest version of AutoHotkey & install
@@ -29,7 +30,7 @@ GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro
 
 **`RCTRL`** + **`RSHIFT`** : Outfit Fix (Re-apply outfit)
 
-You can change the keybindings by using reference in the link below
+You can change the keybindings by using reference in the link below:
 > https://www.autohotkey.com/docs/KeyList.htm
 
 ### Others
@@ -38,7 +39,7 @@ You can change the keybindings by using reference in the link below
 
 **`Crosshair`** _(via tray menu)_ : ***Windowed / Windowed Borderless only, fullscreen will not work!***
 
-**`Anti-AFK`** _(via tray menu)_ : ***The game will press `Z` every 10 minutes***
+**`Anti-AFK`** _(via tray menu)_ : ***The game will press `Z` every 10 minutes.***
 
 
 ### Config.ini
