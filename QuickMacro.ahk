@@ -5,6 +5,7 @@
 ; Modified by kezoura (https://github.com/kezoura)
 ;
 
+; RUN AS ADMIN
 Loop, %0%
   {
     param := %A_Index%
@@ -20,6 +21,7 @@ IF NOT A_IsAdmin
        DllCall(ShellExecute, uint, 0, str, "RunAs", str, A_AhkPath, str, """" . A_ScriptFullPath . """" . A_Space . params, str, A_WorkingDir, int, 1)
     ExitApp
 }
+; END RUN AS ADMIN
 
 #NoEnv
 #InstallKeybdHook
