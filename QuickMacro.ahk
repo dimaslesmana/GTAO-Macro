@@ -27,15 +27,16 @@ IF NOT A_IsAdmin
 #InstallKeybdHook
 #SingleInstance force
 
-MsgBox, 64, GTA Online Macro  v1.0, Welcome!
-
-#include %A_ScriptDir%\includes\process_suspend.ahk
 #Include %A_ScriptDir%\includes\variables.ahk
+
+MsgBox, 64, %Title% %version%, Welcome!, 1
+
 #Include %A_ScriptDir%\includes\keys.ahk
 #Include %A_ScriptDir%\includes\conf.ahk
 #Include %A_ScriptDir%\includes\tray.ahk
 #Include %A_ScriptDir%\includes\crosshair.ahk
 #Include %A_ScriptDir%\includes\anti-afk.ahk
+#include %A_ScriptDir%\includes\process_suspend.ahk
 #Include %A_ScriptDir%\includes\emptysession.ahk
 
 loadConf()
