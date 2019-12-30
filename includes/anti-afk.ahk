@@ -3,8 +3,8 @@ antiAFK() {
     GTAPid := pid
     Ticks := A_TickCount
 
-    while (pid > 0 && afk = true && !GetKeyState("W", "A")) {
-        if (A_TickCount - Ticks > %afk_time% * 60000) {
+    while (pid > 0 && afk = true && !GetKeyState("W")) {
+        if (A_TickCount - Ticks > afk_time * 60000) {
             WinGet, PID, pid, A
             if (GTAPid != pid) {
                 WinActivate, %GameTitle%
@@ -21,5 +21,6 @@ antiAFK() {
         afk := !afk
         Menu, Tray, Rename, Anti-AFK: [ON], Anti-AFK: [OFF]
     }
-    MsgBox, 64, GTA Online Macro  v1.0, Anti-AFK Disabled!, 1
+    MsgBox, 64, %Title% %version%, Anti-AFK Disabled!, 1
+    WinActivate, %GameTitle%
 }
