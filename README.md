@@ -38,7 +38,7 @@ You can change the keybindings by using reference in the link below
 
 **`Crosshair`** _(via tray menu)_ : ***Windowed / Windowed Borderless only, fullscreen will not work!***
 
-**`Anti-AFK`** _(via tray menu)_ : ***The game will press `Z` when reached 10 minutes***
+**`Anti-AFK`** _(via tray menu)_ : ***The game will press `Z` every 10 minutes***
 
 
 ### Config.ini
