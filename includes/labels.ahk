@@ -2,86 +2,72 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
-
-
-; Services
-pegasusLabel:
-	callService("Pegasus")
-return
-
-mechanicLabel:
-	callService("Mechanic")
-return
-
-lesterLabel:
-	callService("Lester")
-return
-
-morsMutualLabel:
-	callService("MorsMutual")
-return
-
+; Modified by kezoura (https://github.com/kezoura)
+;
 
 ; CEO abilities
 toggleCeoLabel:
 	toggleCeo()
 return
 
-buzzardLabel:
-	ceoAbil("Buzzard")
+; Armor lists
+armorLabel:
+	if(Armor_Type = "armor1") {
+		getItem("SuperLightArmor")
+	}
+	else if(Armor_Type = "armor2") {
+		getItem("LightArmor")
+	}
+	else if(Armor_Type = "armor3") {
+		getItem("StandardArmor")
+	}
+	else if(Armor_Type = "armor4") {
+		getItem("HeavyArmor")
+	} 
+	else if(Armor_Type = "armor5") {
+		getItem("SuperHeavyArmor")
+}
 return
-
-ghostLabel:
-	ceoAbil("Gost")
-return
-
-bullsharkLabel:
-	ceoAbil("Bullshark")
-return
-
 
 ; Player items
-armorLabel:
-	getItem("Armor")
+snack1Label:
+	getItem("EatEgoChaser")
 return
 
-snackLabel:
-	getItem("Snack")
+snack2Label:
+	getItem("EatMeteorite")
+return
+
+snack3Label:
+	getItem("EateCola")
+return
+
+snack4Label:
+	getitem("EatPsQs")
 return
 
 ammoLabel:
-	getItem("Ammo")
+	getItem("BuyAmmo")
 return
-
 
 ; Others
-fastHeavyReloadLabel:
-	fastHeavyReload()
-return
-
-fastEwoLabel:
-	fastEwo()
-return
-
-repeatButtonLabel:
-	repeatButton()
-return
-
-crossHairLabel:
-	toggleCrosshair()
-return
-
 outfitFixLabel:
 	outfitFix()
 return
 
-loopRepeatButton:
-    while(T) {
-		Send {%RepeatButton%}
-		sleep, RepeatButtonDelay
-	}
+emptySessionLabel:
+	emptySession()
 return
 
+crosshairLabel:
+	toggleCrosshair()
+return
+
+antiAFKLabel:
+	toggleAFK()
+return
+
+; Main
 activateLabel:
 	init()
 return
