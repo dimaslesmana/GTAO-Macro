@@ -1,7 +1,6 @@
 
 # QuickMacro
-GTA Online useful macros
-Big thanks to MacMailler for creating QuickMacro
+GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro
 
 ### Installation and using
 1. [Download](https://www.autohotkey.com/) latest version of AutoHotkey & install
@@ -30,13 +29,17 @@ Big thanks to MacMailler for creating QuickMacro
 
 **`RCTRL`** + **`RSHIFT`** : Outfit Fix (Re-apply outfit)
 
-
-Empty public session (via tray menu) : ***The game will be frozen for 10 seconds!***
-Crosshair (via tray menu) : ***Windowed / Windowed Borderless only, fullscreen will not work!***
-Anti-AFK (via tray menu) : ***The game will press `Z` when reached 10 minutes***
-
 You can change the keybindings by using reference in the link below
 > https://www.autohotkey.com/docs/KeyList.htm
+
+### Others
+
+**`Empty public session`** _(via tray menu)_ : ***The game will be frozen for 10 seconds!***
+
+**`Crosshair`** _(via tray menu)_ : ***Windowed / Windowed Borderless only, fullscreen will not work!***
+
+**`Anti-AFK`** _(via tray menu)_ : ***The game will press `Z` when reached 10 minutes***
+
 
 ### Config.ini
     [Misc]
