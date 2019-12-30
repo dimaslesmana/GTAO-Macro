@@ -21,7 +21,7 @@ GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro
 
 **`Numpad 3`** : Eat Snack (eCola)
 
-**`Numpad 0`** : Use Armor (default: Super Heavy Armor *`armor5`*)
+**`Numpad 0`** : Use Armor _(default: Super Heavy Armor *`armor5`*)_
 
 **`Numpad * (Mult)`** : Buy Ammo
 
