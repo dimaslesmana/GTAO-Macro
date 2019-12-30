@@ -5,7 +5,7 @@
 ; Modified by kezoura (https://github.com/kezoura)
 ;
 
-Menu, Tray, Tip, GTAO Macro: OFF`nCEO/MC Mode: Disabled
+Menu, Tray, Tip,GTAO Macro: OFF`nVIP Mode: Disabled
 
 Menu, Tray, NoStandard
 Menu, Tray, Add, Activate, activateLabel
