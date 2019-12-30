@@ -44,7 +44,7 @@ You can change the keybindings by using reference in the link below
 ### Config.ini
     [Misc]
     Armor_Type = armor5
-Depends on what armor you want to use, you can change it by looking at the table below
+Depends on what armor you want to use, you can change it by looking on the table below:
 
 |Name|Armor_Type|
 |--|--|
