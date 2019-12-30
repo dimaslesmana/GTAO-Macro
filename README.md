@@ -25,7 +25,7 @@ GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro
 
 **`Numpad * (Mult)`** : Buy Ammo
 
-**`Numpad / (Div)`** : Toggle CEO/MC Mode (Not for register CEO/MC Club)
+**`Numpad / (Div)`** : Toggle VIP(CEO/MC) Mode (Not for register CEO/MC Club)
 
 **`RCTRL`** + **`RSHIFT`** : Outfit Fix (Re-apply outfit)
 
