@@ -2,66 +2,43 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
+; Modified by kezoura (https://github.com/kezoura)
+;
 
-Global SettingsFile := "QuickMacro.ini"
+Global SettingsFile := "config.ini"
 
 loadConf() {
 	IfExist, %SettingsFile%
 	{
-		IniRead, keyPhoneDalay, %SettingsFile%, Delays, KeyPhoneDalay
-		IniRead, keyPhoneDuration, %SettingsFile%, Delays, KeyPhoneDuration
-		IniRead, phoneDelay, %SettingsFile%, Delays, PhoneDelay
 		IniRead, menuDelay, %SettingsFile%, Delays, MenuDelay
 		IniRead, keyMDelay, %SettingsFile%, Delays, KeyMDelay
 		IniRead, keyMDuration, %SettingsFile%, Delays, KeyMDuration
-		IniRead, RepeatButtonDelay, %SettingsFile%, Delays, RepeatButtonDelay
-		IniRead, heavyWeaponKey, %SettingsFile%, Keys, HeavyWeaponKey
-		IniRead, specialWeaponKey, %SettingsFile%, Keys, SpecialWeaponKey
-		IniRead, RepeatButton, %SettingsFile%, Keys, RepeatButton
 		
-		IniRead, PegasusKey, %SettingsFile%, Hotkeys, PegasusKey
-		IniRead, MechanicKey, %SettingsFile%, Hotkeys, MechanicKey
-		IniRead, LesterKey, %SettingsFile%, Hotkeys, LesterKey
-		IniRead, BuzzardKey, %SettingsFile%, Hotkeys, BuzzardKey
-		IniRead, GhostKey, %SettingsFile%, Hotkeys, GhostKey
-		IniRead, ArmorKey, %SettingsFile%, Hotkeys, ArmorKey
-		IniRead, SnackKey, %SettingsFile%, Hotkeys, SnackKey
-		IniRead, BullsharkKey, %SettingsFile%, Hotkeys, BullsharkKey
-		IniRead, AmmoKey, %SettingsFile%, Hotkeys, AmmoKey
-		IniRead, ToggleCeoKey, %SettingsFile%, Hotkeys, ToggleCeoKey
-		IniRead, MorsMutualKey, %SettingsFile%, Hotkeys, MorsMutualKey
-		IniRead, FastHeavyReloadKey, %SettingsFile%, Hotkeys, FastHeavyReloadKey
-		IniRead, FastEwoKey, %SettingsFile%, Hotkeys, FastEwoKey
-		IniRead, RepeatButtonKey, %SettingsFile%, Hotkeys, RepeatButtonKey
-		IniRead, CrosshairKey, %SettingsFile%, Hotkeys, CrosshairKey
-		IniRead, OutfitFixKey, %SettingsFile%, Hotkeys, OutfitFixKey
+		IniRead, Eat_EgoChaser_Key, %SettingsFile%, Hotkeys, Eat_EgoChaser_Key
+		IniRead, Eat_Meteorite_Key, %SettingsFile%, Hotkeys, Eat_Meteorite_Key
+		IniRead, Eat_eCola_Key, %SettingsFile%, Hotkeys, Eat_eCola_Key
+		IniRead, Eat_PsQs_Key, %SettingsFile%, Hotkeys, Eat_PsQs_Key
+		IniRead, Armor_Key, %SettingsFile%, Hotkeys, Armor_Key
+		IniRead, Buy_Ammo_Key, %SettingsFile%, Hotkeys, Buy_Ammo_Key
+		IniRead, Toggle_Ceo_Key, %SettingsFile%, Hotkeys, Toggle_Ceo_Key
+		IniRead, Outfit_Fix_Key, %SettingsFile%, Hotkeys, Outfit_Fix_Key
+
+		IniRead, Armor_Type, %SettingsFile%, Misc, Armor_Type
 	} else {
-		IniWrite, %keyPhoneDalay%, %SettingsFile%, Delays, KeyPhoneDalay
-		IniWrite, %keyPhoneDuration%, %SettingsFile%, Delays, KeyPhoneDuration
-		IniWrite, %phoneDelay%, %SettingsFile%, Delays, PhoneDelay
+		MsgBox, 48, Warning, No config detected!`nUpon this prompt, the config file will be created.
 		IniWrite, %menuDelay%, %SettingsFile%, Delays, MenuDelay
 		IniWrite, %keyMDelay%, %SettingsFile%, Delays, KeyMDelay
 		IniWrite, %keyMDuration%, %SettingsFile%, Delays, KeyMDuration
-		IniWrite, %RepeatButtonDelay%, %SettingsFile%, Delays, RepeatButtonDelay
-		IniWrite, %heavyWeaponKey%, %SettingsFile%, Keys, HeavyWeaponKey
-		IniWrite, %specialWeaponKey%, %SettingsFile%, Keys, SpecialWeaponKey
-		IniWrite, %RepeatButton%, %SettingsFile%, Keys, RepeatButton
 		
-		IniWrite, %PegasusKey%, %SettingsFile%, Hotkeys, PegasusKey
-		IniWrite, %MechanicKey%, %SettingsFile%, Hotkeys, MechanicKey
-		IniWrite, %LesterKey%, %SettingsFile%, Hotkeys, LesterKey
-		IniWrite, %BuzzardKey%, %SettingsFile%, Hotkeys, BuzzardKey
-		IniWrite, %GhostKey%, %SettingsFile%, Hotkeys, GhostKey
-		IniWrite, %ArmorKey%, %SettingsFile%, Hotkeys, ArmorKey
-		IniWrite, %SnackKey%, %SettingsFile%, Hotkeys, SnackKey
-		IniWrite, %BullsharkKey%, %SettingsFile%, Hotkeys, BullsharkKey
-		IniWrite, %AmmoKey%, %SettingsFile%, Hotkeys, AmmoKey
-		IniWrite, %ToggleCeoKey%, %SettingsFile%, Hotkeys, ToggleCeoKey
-		IniWrite, %MorsMutualKey%, %SettingsFile%, Hotkeys, MorsMutualKey
-		IniWrite, %FastHeavyReloadKey%, %SettingsFile%, Hotkeys, FastHeavyReloadKey
-		IniWrite, %FastEwoKey%, %SettingsFile%, Hotkeys, FastEwoKey
-		IniWrite, %RepeatButtonKey%, %SettingsFile%, Hotkeys, RepeatButtonKey
-		IniWrite, %CrosshairKey%, %SettingsFile%, Hotkeys, CrosshairKey
-		IniWrite, %OutfitFixKey%, %SettingsFile%, Hotkeys, OutfitFixKey
+		IniWrite, %Eat_EgoChaser_Key%, %SettingsFile%, Hotkeys, Eat_EgoChaser_Key
+		IniWrite, %Eat_Meteorite_Key%, %SettingsFile%, Hotkeys, Eat_Meteorite_Key
+		IniWrite, %Eat_eCola_Key%, %SettingsFile%, Hotkeys, Eat_eCola_Key
+		IniWrite, %Eat_PsQs_Key%, %SettingsFile%, Hotkeys, Eat_PsQs_Key
+		IniWrite, %Armor_Key%, %SettingsFile%, Hotkeys, Armor_Key
+		IniWrite, %Buy_Ammo_Key%, %SettingsFile%, Hotkeys, Buy_Ammo_Key
+		IniWrite, %Toggle_Ceo_Key%, %SettingsFile%, Hotkeys, Toggle_Ceo_Key
+		IniWrite, %Outfit_Fix_Key%, %SettingsFile%, Hotkeys, Outfit_Fix_Key
+
+		IniWrite, %Armor_Type%, %SettingsFile%, Misc, Armor_Type
 	}
 }
