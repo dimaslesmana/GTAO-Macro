@@ -8,11 +8,11 @@ The macro should be fine on fullscreen mode, except for crosshair. It has to be 
 2. [Download](https://github.com/kezoura/GTAO-Macro/releases) latest version of this macro
 3. Extract the archive to any place you want
 4. Run GTA V and go to Online mode
-5. Run QuickMacro.ahk (after opening GTAV window)
-6. Press the "END" key to activate
+5. Run GTAO Macro.ahk (after opening GTAV window)
+6. Press the **`END`** key to activate
 
 ### Hotkeys
-**`End`** : Activate/Deactivate GTA Online Macros
+**`END`** : Activate/Deactivate GTA Online Macros
 
 **`Numpad . (Dot)`** : Eat Snack (P's & Q's)
 
