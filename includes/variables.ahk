@@ -6,6 +6,8 @@
 ;
 
 ; Main
+Global Title := "GTAO Macro"
+Global version := "v1.6"
 Global GameTitle := "Grand Theft Auto V"
 Global hotkeyState := "OFF"
 Global playerState := 0
@@ -16,5 +18,5 @@ Global keyMDuration := 36
 
 ; Anti-AFK
 Global afk := false
-Global afk_key = z
-Global afk_time := 10 ; minutes
+Global afk_key := "z"
+Global afk_time := 10
