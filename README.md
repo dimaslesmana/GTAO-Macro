@@ -45,6 +45,7 @@ You can change the keybindings by using reference in the link below
     [Misc]
     Armor_Type = armor5
 Depends on what armor you want to use, you can change it by looking at the table below
+
 |Name|Armor_Type|
 |--|--|
 |Super Light Armor|armor1|
