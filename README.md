@@ -1,5 +1,5 @@
 
-# QuickMacro
+# GTAO Macro
 GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro
 
 ### Installation and using
