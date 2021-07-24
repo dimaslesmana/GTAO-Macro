@@ -2,76 +2,83 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
-; Modified by kezoura (https://github.com/kezoura)
-;
 
 ; CEO abilities
 toggleCeoLabel:
-	toggleCeo()
+  toggleCeo()
 return
 
 ; Armor lists
 armorLabel:
-	if(Armor_Type = "armor1") {
-		getItem("SuperLightArmor")
-	}
-	else if(Armor_Type = "armor2") {
-		getItem("LightArmor")
-	}
-	else if(Armor_Type = "armor3") {
-		getItem("StandardArmor")
-	}
-	else if(Armor_Type = "armor4") {
-		getItem("HeavyArmor")
-	} 
-	else if(Armor_Type = "armor5") {
-		getItem("SuperHeavyArmor")
-}
-return
+  switch Armor_Type
+  {
+    case "armor1":
+      getItem("SuperLightArmor")
+      return
+    case "armor2":
+      getItem("LightArmor")
+      return
+    case "armor3":
+      getItem("StandardArmor")
+      return
+    case "armor4":
+      getItem("HeavyArmor")
+      return
+    case "armor5":
+      getItem("SuperHeavyArmor")
+      return
+    default:
+      getItem("SuperHeavyArmor")
+      return
+  }
 
 ; Player items
 snack1Label:
-	getItem("EatEgoChaser")
+  getItem("EatEgoChaser")
 return
 
 snack2Label:
-	getItem("EatMeteorite")
+  getItem("EatMeteorite")
 return
 
 snack3Label:
-	getItem("EateCola")
+  getItem("EateCola")
 return
 
 snack4Label:
-	getitem("EatPsQs")
+  getitem("EatPsQs")
 return
 
 ammoLabel:
-	getItem("BuyAmmo")
+  getItem("BuyAmmo")
 return
 
 ; Others
 outfitFixLabel:
-	outfitFix()
+  outfitFix()
 return
 
 emptySessionLabel:
-	emptySession()
+  emptySession()
 return
 
 crosshairLabel:
-	toggleCrosshair()
+  toggleCrosshair()
 return
 
 antiAFKLabel:
-	toggleAFK()
+  toggleAFK()
 return
 
 ; Main
 activateLabel:
-	init()
+  main()
+return
+
+reloadConfigLabel:
+  reloadConfig()
 return
 
 exitLabel:
-	ExitApp
+  ExitApp
 return

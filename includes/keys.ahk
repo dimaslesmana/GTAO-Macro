@@ -2,8 +2,6 @@
 ; Copyright (C) 2017 MacMailler
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
-; Modified by kezoura (https://github.com/kezoura)
-;
 
 Global Eat_EgoChaser_Key := "Numpad1"
 Global Eat_Meteorite_Key := "Numpad2"
