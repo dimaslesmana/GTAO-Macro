@@ -4,11 +4,11 @@ antiAFK() {
   WinGet, PID, pid, %gameTitle%
   gtaPid := pid
   ticks := A_TickCount
-  isSPressed := false
+  isKeyPressed := false
 
   while (pid > 0 && afkState) {
     if GetKeyState("A") {
-      isSPressed := true
+      isKeyPressed := true
       break
     }
 
@@ -29,7 +29,7 @@ antiAFK() {
     WinGet, PID, pid, %gameTitle%
   }
 
-  if (isSPressed)
+  if (isKeyPressed)
     afkState := !afkState
 
   MsgBox, 64, %macroTitle% %macroVersion%, Anti-AFK Disabled!, 1
