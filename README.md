@@ -34,11 +34,11 @@ You can change the keybindings by using reference in the link below:
 
 ## Others
 
-**`Empty public session`** _(via tray menu)_ : ***The game will be frozen for 10 seconds!***
+**`Empty public session`** _(via tray menu)_ : **The game will be frozen for 10 seconds!**
 
-**`Crosshair`** _(via tray menu)_ : ***Windowed / Windowed Borderless only, fullscreen will not work!***
+**`Diamond Casino Heist Mode`** _(via tray menu)_ : **Keypad hacking solver, windowed borderless with native resolution only, fullscreen will not work!**
 
-**`Anti-AFK`** _(via tray menu)_ : ***The game will press `Z` every 10 minutes.***
+**`Anti-AFK`** _(via tray menu)_ : **The game will press `Z` every 10 minutes.**
 
 
 ## Config.ini
