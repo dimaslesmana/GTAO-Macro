@@ -5,7 +5,7 @@
 
 ; Main
 Global macroTitle := "GTAO Macro"
-Global macroVersion := "1.7"
+Global macroVersion := "1.8"
 Global gameTitle := "Grand Theft Auto V"
 Global hotkeyState := "OFF"
 Global vipState := false
@@ -18,3 +18,6 @@ Global keyMDuration := 36
 ; Anti-AFK
 Global afkState := false
 Global afkTime := 10 ; in minutes
+
+; Diamond Casino Heist
+Global diamondCasinoHeistMode := false

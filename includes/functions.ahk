@@ -33,7 +33,7 @@ setHotkeyState(state) {
 }
 
 openInteractionMenu() {
-	setkeydelay, %keyMDelay%, %keyMDuration%
+	SetKeyDelay, %keyMDelay%, %keyMDuration%
 	Send {SC032}
 	Sleep, %menuDelay%
 }
@@ -48,15 +48,6 @@ openInventoryMenu() {
 		Send {Down 3}
 	} else {
 		Send {Down 2}
-	}
-	Send {Enter}
-}
-
-openStyleMenu() {
-	if (vipState) {
-		Send {Down 4}
-	} else {
-		Send {Down 3}
 	}
 	Send {Enter}
 }
@@ -79,110 +70,20 @@ openAmmoMenu() {
 	Send {Down 5}{Enter}
 }
 
-toggleCeo() {
-	vipState := !vipState
-	refreshTrayMenu()
-
+openStyleMenu() {
 	if (vipState) {
-		SoundPlay, %A_ScriptDir%\assets\vip-enabled.mp3, Wait
+		Send {Down 4}
 	} else {
-		SoundPlay, %A_ScriptDir%\assets\vip-disabled.mp3, Wait
+		Send {Down 3}
 	}
-}
-
-toggleCrosshair() {
-	crosshairState := !crosshairState
-	refreshTrayMenu()
-
-	if (crosshairState) {
-		Gui, Crosshair: Show
-		WinActivate, %gameTitle%
-	} else {
-		Gui, Crosshair: Hide
-	}
-}
-
-getItem(itemName) {
-	switch itemName
-	{
-		case "SuperLightArmor":
-			openArmorMenu()
-			Send {Enter}
-			closeInteractionMenu()
-			return
-		case "LightArmor":
-			openArmorMenu()
-			Send {Down 1}{Enter}
-			closeInteractionMenu()
-			return
-		case "StandardArmor":
-			openArmorMenu()
-			Send {Down 2}{Enter}
-			closeInteractionMenu()
-			return
-		case "HeavyArmor":
-			openArmorMenu()
-			Send {Down 3}{Enter}
-			closeInteractionMenu()
-			return
-		case "SuperHeavyArmor":
-			openArmorMenu()
-			Send {Down 4}{Enter}
-			closeInteractionMenu()
-			return
-		case "EatEgoChaser":
-			openSnacksMenu()
-			Send {Down 1}{Enter}
-			closeInteractionMenu()
-			return
-		case "EatMeteorite":
-			openSnacksMenu()
-			Send {Down 2}{Enter}
-			closeInteractionMenu()
-			return
-		case "EateCola":
-			openSnacksMenu()
-			Send {Down 3}{Enter}
-			closeInteractionMenu()
-			return
-		case "EatPsQs":
-			openSnacksMenu()
-			Send {Enter}
-			closeInteractionMenu()
-			return
-		case "BuyAmmo":
-			openAmmoMenu()
-			Send {Up}{Enter}
-			closeInteractionMenu()
-			return
-	}
-}
-
-outfitFix() {
-	openInteractionMenu()
-	openStyleMenu()
-	Send {Down 3}{Enter}
-	closeInteractionMenu()
-}
-
-toggleAFK() {
-	afkState := !afkState
-	refreshTrayMenu()
-
-	if (afkState) {
-		antiAFK()
-	}
-
-	refreshTrayMenu()
-}
-
-emptySession() {
-	suspendGTA5()
-	MsgBox, 64, %macroTitle% %macroVersion%, Done!, 1
-	WinActivate, %gameTitle%
+	Send {Enter}
 }
 
 reloadConfig() {
 	loadConfig()
 	MsgBox, 64, %macroTitle% %macroVersion%, Config Reloaded!, 1
+}
+
+exitScript(path) {
+	WinClose, %path% ahk_class AutoHotkey
 }

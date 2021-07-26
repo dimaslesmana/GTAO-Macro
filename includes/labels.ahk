@@ -3,57 +3,68 @@
 ; GitHub: https://github.com/MacMailler/QuickMacro
 ;
 
-; CEO abilities
-toggleCeoLabel:
-  toggleCeo()
-return
-
-; Armor lists
+;-------------------------------------------------------------------;
+; Armor
 armorLabel:
   switch Armor_Type
   {
     case "armor1":
-      getItem("SuperLightArmor")
+      getArmor("SuperLightArmor")
       return
     case "armor2":
-      getItem("LightArmor")
+      getArmor("LightArmor")
       return
     case "armor3":
-      getItem("StandardArmor")
+      getArmor("StandardArmor")
       return
     case "armor4":
-      getItem("HeavyArmor")
+      getArmor("HeavyArmor")
       return
     case "armor5":
-      getItem("SuperHeavyArmor")
+      getArmor("SuperHeavyArmor")
       return
     default:
-      getItem("SuperHeavyArmor")
+      getArmor("SuperHeavyArmor")
       return
   }
 
-; Player items
+;-------------------------------------------------------------------;
+; Snacks
 snack1Label:
-  getItem("EatEgoChaser")
+  getSnack("EatEgoChaser")
 return
 
 snack2Label:
-  getItem("EatMeteorite")
+  getSnack("EatMeteorite")
 return
 
 snack3Label:
-  getItem("EateCola")
+  getSnack("EateCola")
 return
 
 snack4Label:
-  getitem("EatPsQs")
+  getSnack("EatPsQs")
 return
 
+;-------------------------------------------------------------------;
+; Items
 ammoLabel:
   getItem("BuyAmmo")
 return
 
+;-------------------------------------------------------------------;
+; Diamond Casino Heist
+diamondCasinoHeistLabel:
+  toggleDiamondCasinoHeistMode()
+return
+
+;-------------------------------------------------------------------;
 ; Others
+
+toggleCeoLabel:
+  toggleCeo()
+return
+
 outfitFixLabel:
   outfitFix()
 return
@@ -62,14 +73,11 @@ emptySessionLabel:
   emptySession()
 return
 
-crosshairLabel:
-  toggleCrosshair()
-return
-
 antiAFKLabel:
   toggleAFK()
 return
 
+;-------------------------------------------------------------------;
 ; Main
 activateLabel:
   main()
