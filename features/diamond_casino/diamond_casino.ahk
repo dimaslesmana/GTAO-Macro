@@ -53,9 +53,6 @@ YRatio := Round(A_ScreenHeight / CD)
 if (XRatio / YRatio >= 4) {
   ScreenWidthCalc := Round(A_ScreenWidth / 3)
 
-  XP1 := (ScreenWidthCalc / 6) + ScreenWidthCalc
-  XP2 := (ScreenWidthCalc / 2) + ScreenWidthCalc
-
   XK1 := (ScreenWidthCalc / 6) + ScreenWidthCalc
   XK2 := (ScreenWidthCalc - (ScreenWidthCalc / 3)) + ScreenWidthCalc
 
@@ -64,18 +61,12 @@ if (XRatio / YRatio >= 4) {
 } else {
   ScreenWidthCalc := A_ScreenWidth
 
-  XP1 := A_ScreenWidth / 6
-  XP2 := A_ScreenWidth / 2
-
   XK1 := A_ScreenWidth / 6
   XK2 := A_ScreenWidth - (A_ScreenWidth / 3)
 
   X := A_ScreenWidth / 2
   Z := A_ScreenWidth - (A_ScreenWidth / 4)
 }
-
-YP1 := A_ScreenHeight / 6
-YP2 := A_ScreenHeight - (A_ScreenHeight / 6)
 
 YK1 := A_ScreenHeight / 6
 YK2 := A_ScreenHeight - (A_ScreenHeight / 6)
@@ -111,9 +102,9 @@ if (!WinExist(gameTitle)) {
 
 if (!isFileExist()) {
 	ToolTip Unsupported resolution!, 0, 0
-	Sleep 2000
+	Sleep 4000
 	ToolTip Exiting script, 0, 21, 2
-	Sleep 2000
+	Sleep 4000
 	Exitapp
 }
 
@@ -124,13 +115,13 @@ Loop
 		ImageSearch,,, %X%, 0, %Z%, %Y%, % "*transBlack *50 " path . "\print.bmp"
 
 		if (ErrorLevel = 0) {
-			ToolTip Hack: Fingerprint Scanner., 0, 0, 17
+			ToolTip Hack: Fingerprint Scanner, 0, 0, 17
 			fingerprint()
 		} else {
 			ImageSearch,,, %X%, 0, %Z%, %Y%, % "*transBlack *50 " path . "\keypad.bmp"
 
 			if (ErrorLevel = 0) {
-				ToolTip Hack: Keypad Cracker., 0, 0, 17
+				ToolTip Hack: Keypad Cracker, 0, 0, 17
 				keypad(XK1, YK1, XK2, YK2, ScreenWidthCalc)
 			} else {
 				clearTooltips()
