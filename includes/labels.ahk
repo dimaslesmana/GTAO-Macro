@@ -60,11 +60,6 @@ return
 
 ;-------------------------------------------------------------------;
 ; Others
-
-toggleCeoLabel:
-  toggleCeo()
-return
-
 outfitFixLabel:
   outfitFix()
 return

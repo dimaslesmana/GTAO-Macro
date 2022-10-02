@@ -18,7 +18,6 @@ loadConfig() {
     IniRead, Eat_PsQs_Key, %ConfigFile%, Hotkeys, Eat_PsQs_Key
     IniRead, Armor_Key, %ConfigFile%, Hotkeys, Armor_Key
     IniRead, Buy_Ammo_Key, %ConfigFile%, Hotkeys, Buy_Ammo_Key
-    IniRead, Toggle_Ceo_Key, %ConfigFile%, Hotkeys, Toggle_Ceo_Key
     IniRead, Outfit_Fix_Key, %ConfigFile%, Hotkeys, Outfit_Fix_Key
 
     IniRead, Armor_Type, %ConfigFile%, Misc, Armor_Type
@@ -34,7 +33,6 @@ loadConfig() {
     IniWrite, %Eat_PsQs_Key%, %ConfigFile%, Hotkeys, Eat_PsQs_Key
     IniWrite, %Armor_Key%, %ConfigFile%, Hotkeys, Armor_Key
     IniWrite, %Buy_Ammo_Key%, %ConfigFile%, Hotkeys, Buy_Ammo_Key
-    IniWrite, %Toggle_Ceo_Key%, %ConfigFile%, Hotkeys, Toggle_Ceo_Key
     IniWrite, %Outfit_Fix_Key%, %ConfigFile%, Hotkeys, Outfit_Fix_Key
 
     IniWrite, %Armor_Type%, %ConfigFile%, Misc, Armor_Type

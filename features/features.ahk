@@ -4,28 +4,33 @@ getArmor(name) {
   switch name
   {
     case "SuperLightArmor":
-			openArmorMenu()
-			Send {Enter}
+			if (openArmorMenu())
+				Send {Enter}
+
 			closeInteractionMenu()
 			return
 		case "LightArmor":
-			openArmorMenu()
-			Send {Down 1}{Enter}
+			if (openArmorMenu())
+				Send {Down 1}{Enter}
+
 			closeInteractionMenu()
 			return
 		case "StandardArmor":
-			openArmorMenu()
-			Send {Down 2}{Enter}
+			if (openArmorMenu())
+				Send {Down 2}{Enter}
+
 			closeInteractionMenu()
 			return
 		case "HeavyArmor":
-			openArmorMenu()
-			Send {Down 3}{Enter}
+			if (openArmorMenu())
+				Send {Down 3}{Enter}
+
 			closeInteractionMenu()
 			return
 		case "SuperHeavyArmor":
-			openArmorMenu()
-			Send {Down 4}{Enter}
+			if (openArmorMenu())
+				Send {Down 4}{Enter}
+
 			closeInteractionMenu()
 			return
   }
@@ -37,23 +42,27 @@ getSnack(name) {
   switch name
 	{
 		case "EatEgoChaser":
-			openSnacksMenu()
-			Send {Down 1}{Enter}
+			if (openSnacksMenu())
+				Send {Down 1}{Enter}
+
 			closeInteractionMenu()
 			return
 		case "EatMeteorite":
-			openSnacksMenu()
-			Send {Down 2}{Enter}
+			if (openSnacksMenu())
+				Send {Down 2}{Enter}
+
 			closeInteractionMenu()
 			return
 		case "EateCola":
-			openSnacksMenu()
-			Send {Down 3}{Enter}
+			if (openSnacksMenu())
+				Send {Down 3}{Enter}
+
 			closeInteractionMenu()
 			return
 		case "EatPsQs":
-			openSnacksMenu()
-			Send {Enter}
+			if (openSnacksMenu())
+				Send {Enter}
+
 			closeInteractionMenu()
 			return
 	}
@@ -65,8 +74,9 @@ getItem(name) {
 	switch name
 	{
 		case "BuyAmmo":
-			openAmmoMenu()
-			Send {Up}{Enter}
+			if (openAmmoMenu())
+				Send {Up}{Enter}
+
 			closeInteractionMenu()
 			return
 	}
@@ -76,8 +86,9 @@ getItem(name) {
 ; Outfit fix
 outfitFix() {
 	openInteractionMenu()
-	openStyleMenu()
-	Send {Down 3}{Enter}
+	if (openStyleMenu())
+		Send {Down 3}{Enter}
+
 	closeInteractionMenu()
 }
 
@@ -155,17 +166,4 @@ toggleDiamondCasinoHeistMode() {
   }
 
   refreshTrayMenu()
-}
-
-;-------------------------------------------------------------------;
-; Others
-toggleCeo() {
-	vipState := !vipState
-	refreshTrayMenu()
-
-	if (vipState) {
-		SoundPlay, %A_ScriptDir%\assets\vip-enabled.mp3, Wait
-	} else {
-		SoundPlay, %A_ScriptDir%\assets\vip-disabled.mp3, Wait
-	}
 }

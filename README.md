@@ -1,7 +1,9 @@
 
 # GTAO Macro
-GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro.
-The macro should be fine on fullscreen mode, except for crosshair. It has to be Windowed / Windowed fullscreen.
+GTA Online useful macros | Big thanks to MacMailler for creating QuickMacro.\
+Windowed Borderless with native resolution only, fullscreen will not work.
+
+Sub-menu inside interaction menu *(Inventory, Style, Body Armor, Snacks, Ammo)* are scanned using image searching. You may want to check the images inside `/assets/images/interaction-menu/yourxresolution` if navigating to those five menu isn't working *(or maybe replace the image with the one you captured)*.
 
 ## Installation and using
 1. [Download](https://www.autohotkey.com/) latest version of AutoHotkey & install.
@@ -25,8 +27,6 @@ The macro should be fine on fullscreen mode, except for crosshair. It has to be 
 
 **`Numpad * (Mult)`** : Buy ammo.
 
-**`Numpad / (Div)`** : Toggle VIP(CEO/MC) mode (Not for register CEO/MC club).
-
 **`RCTRL`** + **`RSHIFT`** : Outfit fix (Re-apply outfit).
 
 You can change the keybindings by using reference in the link below:
@@ -36,7 +36,7 @@ You can change the keybindings by using reference in the link below:
 
 **`Empty public session`** _(via tray menu)_ : **The game will be frozen for 10 seconds!**
 
-**`Diamond Casino Heist Mode`** _(via tray menu)_ : **Keypad hacking solver, windowed borderless with native resolution only, fullscreen will not work!**
+**`Diamond Casino Heist Mode`** _(via tray menu)_ : **Keypad hacking solver.**
 
 **`Anti-AFK`** _(via tray menu)_ : **The game will press `Z` every 10 minutes.**
 

@@ -88,7 +88,7 @@ isFileExist() {
 
 clearTooltips() {
 	n := 0
-	Loop 16
+	Loop 7
 	{
 		n := n+1
 		Tooltip,,,,%n%
@@ -115,17 +115,16 @@ Loop
 		ImageSearch,,, %X%, 0, %Z%, %Y%, % "*transBlack *50 " path . "\print.bmp"
 
 		if (ErrorLevel = 0) {
-			ToolTip Hack: Fingerprint Scanner, 0, 0, 17
+			ToolTip Hack: Fingerprint Scanner, 0, 0, 7
 			fingerprint()
 		} else {
 			ImageSearch,,, %X%, 0, %Z%, %Y%, % "*transBlack *50 " path . "\keypad.bmp"
 
 			if (ErrorLevel = 0) {
-				ToolTip Hack: Keypad Cracker, 0, 0, 17
+				ToolTip Hack: Keypad Cracker, 0, 0, 7
 				keypad(XK1, YK1, XK2, YK2, ScreenWidthCalc)
 			} else {
 				clearTooltips()
-				Tooltip, Hack: Not found!, 0, 0, 17
 			}
 		}
 	} else {

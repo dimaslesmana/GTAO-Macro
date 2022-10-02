@@ -22,6 +22,16 @@ IF NOT A_IsAdmin {
 
 SetWorkingDir %A_ScriptDir%
 DetectHiddenWindows, On
+ListLines Off
+CoordMode ToolTip, Screen
+CoordMode Mouse, Screen
+CoordMode Pixel, Screen
+SetBatchLines -1
+SetControlDelay 1
+SetWinDelay 0
+SetMouseDelay -1
+SendMode Event
+
 #NoEnv
 #InstallKeybdHook
 #SingleInstance force
@@ -33,16 +43,16 @@ DetectHiddenWindows, On
 #Include %A_ScriptDir%\includes\tray.ahk
 #include %A_ScriptDir%\includes\process_suspend.ahk
 
-MsgBox, 64, %macroTitle% v%macroVersion%, Welcome!, 1
-
 loadConfig()
 initTrayMenu()
+
+MsgBox, 64, %macroTitle% v%macroVersion%, Welcome!, 1
 
 End::
   if WinActive(gameTitle)
     main()
 return
 
-#include %A_ScriptDir%\includes\features.ahk
+#include %A_ScriptDir%\features\features.ahk
 #Include %A_ScriptDir%\includes\labels.ahk
 #Include %A_ScriptDir%\includes\functions.ahk

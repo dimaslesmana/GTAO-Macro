@@ -4,7 +4,7 @@
 ;
 
 initTrayMenu() {
-  Menu, Tray, Tip, % "GTAO Macro: " hotkeyState "`nVIP Mode: " . (vipState ? "Enabled" : "Disabled")
+  Menu, Tray, Tip, % "GTAO Macro: " hotkeyState
 
   Menu, Tray, NoStandard
   Menu, Tray, Add, % (hotkeyState == "ON") ? "Deactivate" : "Activate", activateLabel
@@ -16,7 +16,7 @@ initTrayMenu() {
 }
 
 refreshTrayMenu() {
-  Menu, Tray, Tip, % "GTAO Macro: " hotkeyState "`nVIP Mode: " . (vipState ? "Enabled" : "Disabled")
+  Menu, Tray, Tip, % "GTAO Macro: " hotkeyState
   Menu, Tray, DeleteAll
   Menu, Tray, Add, % (hotkeyState == "ON") ? "Deactivate" : "Activate", activateLabel
   Menu, Tray, Add, Empty Session, emptySessionLabel

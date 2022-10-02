@@ -6,7 +6,13 @@
 main() {
 	if (!WinExist(gameTitle)) {
 		MsgBox, 16, Error, %gameTitle% is not running!
-		return
+		ExitApp
+	}
+
+	result := checkAssets()
+	if (result.error) {
+		MsgBox, 16, Unsupported resolution, % "Missing asset! `nPath: " result.message
+		ExitApp
 	}
 
 	hotkeyState := (hotkeyState == "ON") ? "OFF" : "ON"
@@ -20,6 +26,21 @@ main() {
 	}
 }
 
+checkAssets() {
+	interactionMenu := ["inventory-novip.bmp", "inventory-vip.bmp", "style-novip.bmp", "style-vip.bmp", "snacks.bmp", "ammo.bmp", "body-armor.bmp"]
+
+	for i, asset in interactionMenu {
+		path := A_ScriptDir "\assets\images\interaction-menu\" A_ScreenWidth "x" A_ScreenHeight "\" asset
+		if (!FileExist(path)) {
+			return { error: true, message: path}
+		}
+	}
+
+	return { error: false, message: "" }
+}
+
+;-------------------------------------------------------------------;
+; Keybinds
 setHotkeyState(state) {
 	Hotkey, IfWinActive, %gameTitle%
 	Hotkey, %Armor_Key%, armorLabel, %state%
@@ -28,10 +49,11 @@ setHotkeyState(state) {
 	Hotkey, %Eat_eCola_Key%, snack3Label, %state%
 	Hotkey, %Eat_PsQs_Key%, snack4Label, %state%
 	Hotkey, %Buy_Ammo_Key%, ammoLabel, %state%
-	Hotkey, %Toggle_Ceo_Key%, toggleCeoLabel, %state%
 	Hotkey, %Outfit_Fix_Key%, outfitFixLabel, %state%
 }
 
+;-------------------------------------------------------------------;
+; Interaction Menu functions
 openInteractionMenu() {
 	SetKeyDelay, %keyMDelay%, %keyMDuration%
 	Send {SC032}
@@ -44,39 +66,182 @@ closeInteractionMenu() {
 }
 
 openInventoryMenu() {
-	if (vipState) {
-		Send {Down 3}
-	} else {
-		Send {Down 2}
+	isOpened := false
+	Loop, 20
+	{
+		Loop, 2
+		{
+			image := (A_Index == 1) ? "inventory-novip.bmp" : "inventory-vip.bmp"
+			path := A_ScriptDir "\assets\images\interaction-menu\" A_ScreenWidth "x" A_ScreenHeight "\" image
+
+			ImageSearch,,, % interactionMenuArea.x, % interactionMenuArea.y, % interactionMenuArea.x2, % interactionMenuArea.y2, *50 %path%
+
+			if (ErrorLevel == 0) {
+				Send {Enter}
+				isOpened := true
+				break
+			}
+		}
+
+		if (isOpened)
+			break
+
+		Sleep, 10
+		Send {Down}
 	}
-	Send {Enter}
+
+	if (!isOpened) {
+		ToolTip Inventory Menu not found!, 0, 0
+		Sleep 2500
+		clearTooltips()
+	}
+
+	return isOpened
 }
 
 openArmorMenu() {
 	openInteractionMenu()
-	openInventoryMenu()
-	Send {Down 3}{Enter}
+	isInventoryOpen := openInventoryMenu()
+
+	if (isInventoryOpen) {
+		isOpened := false
+		Loop, 20
+		{
+			image := "body-armor.bmp"
+			path := A_ScriptDir "\assets\images\interaction-menu\" A_ScreenWidth "x" A_ScreenHeight "\" image
+
+			ImageSearch,,, % interactionMenuArea.x, % interactionMenuArea.y, % interactionMenuArea.x2, % interactionMenuArea.y2, *50 %path%
+
+			if (ErrorLevel == 0) {
+				Send {Enter}
+				isOpened := true
+				break
+			}
+
+			Sleep, 10
+			Send {Down}
+		}
+
+		if (!isOpened) {
+			ToolTip Body Armor Menu not found!, 0, 0
+			Sleep 2500
+			clearTooltips()
+		}
+
+		return isOpened
+	}
+
+	return isInventoryOpen
 }
 
 openSnacksMenu() {
 	openInteractionMenu()
-	openInventoryMenu()
-	Send {Down 4}{Enter}
+	isInventoryOpen := openInventoryMenu()
+
+	if (isInventoryOpen) {
+		isOpened := false
+		Loop, 20
+		{
+			image := "snacks.bmp"
+			path := A_ScriptDir "\assets\images\interaction-menu\" A_ScreenWidth "x" A_ScreenHeight "\" image
+
+			ImageSearch,,, % interactionMenuArea.x, % interactionMenuArea.y, % interactionMenuArea.x2, % interactionMenuArea.y2, *50 %path%
+
+			if (ErrorLevel == 0) {
+				Send {Enter}
+				isOpened := true
+				break
+			}
+
+			Sleep, 10
+			Send {Down}
+		}
+
+		if (!isOpened) {
+			ToolTip Snacks Menu not found!, 0, 0
+			Sleep 2500
+			clearTooltips()
+		}
+
+		return isOpened
+	}
+
+	return isInventoryOpen
 }
 
 openAmmoMenu() {
 	openInteractionMenu()
-	openInventoryMenu()
-	Send {Down 5}{Enter}
+	isInventoryOpen := openInventoryMenu()
+
+	if (isInventoryOpen) {
+		isOpened := false
+		Loop, 20
+		{
+			image := "ammo.bmp"
+			path := A_ScriptDir "\assets\images\interaction-menu\" A_ScreenWidth "x" A_ScreenHeight "\" image
+
+			ImageSearch,,, % interactionMenuArea.x, % interactionMenuArea.y, % interactionMenuArea.x2, % interactionMenuArea.y2, *50 %path%
+
+			if (ErrorLevel == 0) {
+				Send {Enter}
+				isOpened := true
+				break
+			}
+
+			Sleep, 10
+			Send {Down}
+		}
+
+		if (!isOpened) {
+			ToolTip Ammo Menu not found!, 0, 0
+			Sleep 2500
+			clearTooltips()
+		}
+
+		return isOpened
+	}
+
+	return isInventoryOpen
 }
 
 openStyleMenu() {
-	if (vipState) {
-		Send {Down 4}
-	} else {
-		Send {Down 3}
+	isEnterPressed := false
+	Loop, 20
+	{
+		Loop, 2
+		{
+			image := (A_Index == 1) ? "style-novip.bmp" : "style-vip.bmp"
+			path := A_ScriptDir "\assets\images\interaction-menu\" A_ScreenWidth "x" A_ScreenHeight "\" image
+
+			ImageSearch,,, % interactionMenuArea.x, % interactionMenuArea.y, % interactionMenuArea.x2, % interactionMenuArea.y2, *50 %path%
+
+			if (ErrorLevel == 0) {
+				Send {Enter}
+				isEnterPressed := true
+				break
+			}
+		}
+
+		if (isEnterPressed)
+			break
+
+		Sleep, 10
+		Send {Down}
 	}
-	Send {Enter}
+
+	if (!isEnterPressed) {
+		ToolTip Style Menu not found!, 0, 0
+		Sleep 2500
+		clearTooltips()
+	}
+
+	return isEnterPressed
+}
+
+;-------------------------------------------------------------------;
+; Others
+clearTooltips() {
+	Tooltip
 }
 
 reloadConfig() {

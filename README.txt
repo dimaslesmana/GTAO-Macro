@@ -18,9 +18,8 @@ Numpad 2	= Eat snack (Meteorite).
 Numpad 3	= Eat snack (eCola).
 Numpad 0	= Use armor (default: Super Heavy Armor).
 Numpad * (Mult)	= Buy ammo.
-Numpad / (Div)	= Toggle VIP(CEO/MC) mode (Not for register CEO/MC club).
 RCTRL + RSHIFT	= Outfit fix (Re-apply outfit).
 
 Empty public session (via tray menu - The game will be frozen for 10 seconds!).
-Diamond Casino Heist Mode (via tray menu - Keypad hacking solver, windowed borderless with native resolution only, fullscreen will not work!).
+Diamond Casino Heist Mode (via tray menu - Keypad hacking solver).
 Anti AFK (via tray menu - The game will press Z every 10 minutes).
